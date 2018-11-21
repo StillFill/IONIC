@@ -34,7 +34,7 @@ export class HomePage {
     // Schedule a single notification
     this.localNotifications.schedule({
       id: 1,
-      text: "Single ILocalNotification",
+      text: `Tarefa ${taskName.value} adicionada com sucesso!`,
       sound: "file://sound.mp3"
     });
   }

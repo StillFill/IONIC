@@ -1,3 +1,25 @@
-page-list {
+.item-inner {
+    border-bottom: 0 !important;
+}
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    align-items: center;
+}
 
+.remove-button {
+    background-color: red;
+    color: white;
+    padding: 15px 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.3em;
+}
+
+.no-data-message {
+    text-align: center;
+    margin-top: 200px;
 }

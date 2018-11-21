@@ -1,23 +1,25 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
     <ion-title>List</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
+    <div *ngIf="tasks.length > 0">
+      <button class="remove-button" (click)='removeSelectedTasks()'>Remover selecionadas</button>
+      <button class="remove-button" (click)='removeAllTasks()'>Remover todas</button>
+    </div>
+    <div *ngFor="let task of tasks">
+      <div class="task-card">
+        <ion-item>
+          <ion-label>{{ task.name }}</ion-label>
+          <ion-label>{{ task.date }}</ion-label>
+          <ion-checkbox [(ngModel)]="task.isSelected"></ion-checkbox>
+        </ion-item>
       </div>
-    </button>
+    </div>
+    <h2 *ngIf="tasks.length === 0" class="no-data-message">Nenhuma tarefa adicionada</h2>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>

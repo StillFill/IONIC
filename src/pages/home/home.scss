@@ -1,3 +1,24 @@
-page-home {
-
+.form-container {
+  p {
+    margin: 15px 0 5px 0;
+  }
+  input {
+    width: 100%;
+    font-size: 1.5em;
+  }
+}
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.add-button {
+  background-color: #66bb6a;
+  color: white;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 2em;
 }

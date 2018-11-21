@@ -6,7 +6,7 @@ import moment from "moment";
   templateUrl: "list.html"
 })
 export class ListPage {
-  tasks: object[];
+  tasks: Array<{ name, isSelected, id }>;
   constructor() {
     const storagedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     console.log(storagedTasks)

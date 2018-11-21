@@ -9,8 +9,8 @@ export class HomePage {
   constructor(public navCtrl: NavController) {}
 
   handleAddTask() {
-    const taskName = document.getElementById("task-name");
-    const taskDate = document.getElementById("task-date");
+    const taskName = <HTMLInputElement>document.getElementById('task-name');
+    const taskDate = <HTMLInputElement>document.getElementById('task-date');
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     localStorage.setItem(
       "tasks",

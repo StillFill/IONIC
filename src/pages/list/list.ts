@@ -1,20 +1,20 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import moment from "moment";
+
 @Component({
   selector: "page-list",
   templateUrl: "list.html"
 })
 export class ListPage {
-  tasks: Array<{ name, isSelected, id }>;
+  tasks: Array<{ name; isSelected; id }>;
   constructor() {
     const storagedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    console.log(storagedTasks)
-    this.tasks =
-      (storagedTasks || []).map(task => ({
-        ...task,
-        date: moment(task.date).format("DD/MM/YYYY")
-      }));
+    console.log(storagedTasks);
+    this.tasks = (storagedTasks || []).map(task => ({
+      ...task,
+      date: moment(task.date).format("DD/MM/YYYY")
+    }));
   }
 
   selectTask(selectedTask) {
@@ -28,7 +28,7 @@ export class ListPage {
 
   removeSelectedTasks() {
     this.tasks = this.tasks.filter(a => !a.isSelected);
-    localStorage.setItem("tasks", JSON.stringify(this.tasks))
+    localStorage.setItem("tasks", JSON.stringify(this.tasks));
   }
 
   removeAllTasks() {
@@ -37,7 +37,7 @@ export class ListPage {
   }
 
   hasTasks() {
-    console.log('hel')
+    console.log("hel");
     return true;
   }
 }

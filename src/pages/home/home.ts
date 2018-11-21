@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { NavController } from "ionic-angular";
 import { LocalNotifications } from "@ionic-native/local-notifications";
 
 @Component({

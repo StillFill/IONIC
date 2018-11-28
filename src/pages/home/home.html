@@ -14,5 +14,30 @@
     <p>Data de expiração</p>
     <input type="date" id="task-date" />
   </div>
-  <button class="add-button" (click)="handleAddTask()">Adicionar</button>
+  <div class="add-button-container">
+    <button class="add-button" (click)="handleAddTask()">Adicionar</button>
+  </div>
+  <ion-list class="tasks-container">
+    <h1>Lista de tarefas</h1>
+    <div *ngFor="let task of tasks">
+      <div class="task-card">
+        <ion-item>
+          <ion-label>{{ task.name }}</ion-label>
+          <ion-label>{{ task.date }}</ion-label>
+          <ion-checkbox [(ngModel)]="task.isSelected"></ion-checkbox>
+        </ion-item>
+      </div>
+    </div>
+    <h2 *ngIf="tasks.length === 0" class="no-data-message">
+      Nenhuma tarefa adicionada
+    </h2>
+  </ion-list>
+  <div *ngIf="tasks.length > 0" class="buttons-container">
+    <button class="remove-button" (click)="removeSelectedTasks()">
+      Remover selecionadas
+    </button>
+    <button class="remove-button" (click)="removeAllTasks()">
+      Remover todas
+    </button>
+  </div>
 </ion-content>
